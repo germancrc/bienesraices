@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InmoPlus - Bienes Raíces</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-container">
+      <div class="container hero-content">
+        <div class="row">
+          <!-- Título y subtítulo en columnas de la izquierda -->
+          <div class="col-md-8">
+            <h1 class="hero-title mb-3">
+              Encuentra tu Hogar Ideal
+            </h1>
+            <p class="hero-subtitle mb-3">
+              Descubre las mejores propiedades en tu zona.
+            </p>
+          </div>
+          <!-- Formulario en columnas de la derecha -->
+          <div class="col-md-4">
+            <div class="card shadow-sm rounded-3">
+              <div class="card-body">
+                <form class="row g-2">
+                  <div class="col-12 text-start">
+                    <div class="row">
+                      <div class="col">
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="radio" name="operacion" id="comprar" value="comprar"
+                        checked>
+                      <label class="form-check-label" for="comprar">Comprar</label>
+                    </div>
+                      </div>
+                      <div class="col">
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="operacion" id="alquilar" value="alquilar">
+                      <label class="form-check-label" for="alquilar">Alquilar</label>
+                    </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12 mb-2">
+                    <label for="tipoInmueble" class="form-label fw-bold">¿Qué buscas?</label>
+                    <select class="form-select form-select-sm" id="tipoInmueble">
+                      <option value="" selected>Busca por casa, apartamento...</option>
+                      <option value="casa">Casa</option>
+                      <option value="departamento">Departamento</option>
+                      <option value="terreno">Terreno</option>
+                      <option value="local">Local Comercial</option>
+                      <option value="oficina">Oficina</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <label for="ubicacion" class="form-label fw-bold">¿Dónde?</label>
+                    <input type="text" class="form-control form-control-sm" id="ubicacion" placeholder="Provincia, Ciudad o Barrio">
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btnBuscar w-100 text-uppercase">
+                      <i class="bi bi-search"></i>&nbsp;Buscar
+                    </button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Propiedades Destacadas -->
+  <section id="propiedades" class="featured-properties">
+    <div class="container">
+      <h3 class="section-title">Propiedades Destacadas</h3>
+      <div class="properties-grid">
+        <!-- Propiedad 1 (Venta) -->
+        <div class="property-card">
+          <span class="property-badge badge-offer">
+            <i class="bi bi-tag-fill me-1"></i> Oferta
+          </span>
+          <img src="/images/property-01.jpg" class="property-image" alt="Residencia Moderna">
+          <div class="property-body">
+            <h5 class="property-title">
+              <i class="bi bi-house-door me-2"></i> Residencia Moderna
+            </h5>
+            <p class="property-details">
+              <i class="bi bi-door-open me-1"></i> 4 Hab |
+              <i class="bi bi-droplet me-1"></i> 3 Baños |
+              <i class="bi bi-arrows-fullscreen me-1"></i> 250m²
+            </p>
+            <div class="property-footer">
+              <span class="property-type badge-sale">
+                <i class="bi bi-currency-dollar me-1"></i> Venta
+              </span>
+              <h5 class="property-price">$450,000</h5>
+            </div>
+          </div>
+          <div class="property-actions">
+            <a href="#" class="btn btn-details">
+              <i class="bi bi-zoom-in me-1"></i> Ver Detalles
+            </a>
+          </div>
+        </div>
+
+        <!-- Propiedad 2 (Renta) -->
+        <div class="property-card">
+          <span class="property-badge badge-new">
+            <i class="bi bi-lightning-charge-fill me-1"></i> Nueva
+          </span>
+          <img src="/images/property-02.jpg" class="property-image" alt="Departamento Premium">
+          <div class="property-body">
+            <h5 class="property-title">
+              <i class="bi bi-building me-2"></i> Departamento Premium
+            </h5>
+            <p class="property-details">
+              <i class="bi bi-door-open me-1"></i> 2 Hab |
+              <i class="bi bi-droplet me-1"></i> 2 Baños |
+              <i class="bi bi-arrows-fullscreen me-1"></i> 120m²
+            </p>
+            <div class="property-footer">
+              <span class="property-type badge-rent">
+                <i class="bi bi-cash-stack me-1"></i> Renta
+              </span>
+              <h5 class="property-price">$1,200/mes</h5>
+            </div>
+          </div>
+          <div class="property-actions">
+            <a href="#" class="btn btn-details">
+              <i class="bi bi-zoom-in me-1"></i> Ver Detalles
+            </a>
+          </div>
+        </div>
+
+        <!-- Propiedad 3 (Venta) -->
+        <div class="property-card">
+          <span class="property-badge badge-popular">
+            <i class="bi bi-fire me-1"></i> Popular
+          </span>
+          <img src="/images/property-03.jpg" class="property-image" alt="Casa Familiar">
+          <div class="property-body">
+            <h5 class="property-title">
+              <i class="bi bi-house-heart me-2"></i> Casa Familiar
+            </h5>
+            <p class="property-details">
+              <i class="bi bi-door-open me-1"></i> 3 Hab |
+              <i class="bi bi-droplet me-1"></i> 2.5 Baños |
+              <i class="bi bi-arrows-fullscreen me-1"></i> 180m²
+            </p>
+            <div class="property-footer">
+              <span class="property-type badge-sale">
+                <i class="bi bi-currency-dollar me-1"></i> Venta
+              </span>
+              <h5 class="property-price">$320,000</h5>
+            </div>
+          </div>
+          <div class="property-actions">
+            <a href="#" class="btn btn-details">
+              <i class="bi bi-zoom-in me-1"></i> Ver Detalles
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Características -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="bi bi-award me-2"></i> Nuestras Ventajas
+      </h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <h4>Ubicación Privilegiada</h4>
+          <p>
+            <i class="bi bi-check-circle me-1"></i> Zonas residenciales con acceso a servicios esenciales.
+          </p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="bi bi-house-door"></i>
+          </div>
+          <h4>Diseño Moderno</h4>
+          <p>
+            <i class="bi bi-check-circle me-1"></i> Arquitectura contemporánea con acabados de lujo.
+          </p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h4>Seguridad Total</h4>
+          <p>
+            <i class="bi bi-check-circle me-1"></i> Sistemas de seguridad de última generación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="bi bi-chat-quote-fill me-2"></i> Opiniones de Clientes
+      </h2>
+      <div class="testimonials-grid">
+        <!-- Testimonio 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-body">
+            <div class="testimonial-header">
+              <img src="/images/client-01.jpg" class="testimonial-avatar" alt="Ana Martínez">
+              <div>
+                <h5 class="testimonial-name">Ana Martínez</h5>
+                <small class="testimonial-role">
+                  <i class="bi bi-house-check me-1"></i> Compradora
+                </small>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              <i class="bi bi-quote testimonial-quote"></i> Excelente servicio y asesoramiento profesional en todo
+              momento.
+            </p>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-body">
+            <div class="testimonial-header">
+              <img src="/images/client-02.jpg" class="testimonial-avatar" alt="Carlos Rodríguez">
+              <div>
+                <h5 class="testimonial-name">Carlos Rodríguez</h5>
+                <small class="testimonial-role">
+                  <i class="bi bi-building-lock me-1"></i> Arrendatario
+                </small>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              <i class="bi bi-quote testimonial-quote"></i> Encontré el departamento perfecto en menos de una semana.
+              ¡Muy recomendables!
+            </p>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-body">
+            <div class="testimonial-header">
+              <img src="/images/client-03.jpg" class="testimonial-avatar" alt="María González">
+              <div>
+                <h5 class="testimonial-name">María González</h5>
+                <small class="testimonial-role">
+                  <i class="bi bi-house-up me-1"></i> Vendedora
+                </small>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              <i class="bi bi-quote testimonial-quote"></i> Vendí mi propiedad al mejor precio del mercado gracias a su
+              estrategia de ventas.
+            </p>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+<section class="faq-section py-5">
+  <div class="container">
+    <h2 class="section-title mb-4">
+      <i class="bi bi-question-circle-fill"></i>&nbsp;Preguntas Frecuentes
+    </h2>
+
+    <div class="accordion" id="faqAccordion">
+      <!-- Pregunta 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+            ● ¿Cuál es el proceso para comprar una propiedad?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Ofrecemos asesoría personalizada en todas las etapas del proceso: desde la búsqueda hasta el cierre legal y la firma.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+            ● ¿Ofrecen opciones de financiamiento?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí. Trabajamos con varias entidades financieras y te ayudamos a encontrar la mejor opción según tu perfil.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+            ● ¿Qué documentos necesito para vender mi propiedad?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Necesitarás la escritura, certificado de libertad de gravamen, identificación oficial y comprobante de domicilio.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+            ● ¿Puedo agendar una visita a una propiedad?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Por supuesto. Puedes contactarnos por WhatsApp o mediante nuestro formulario para agendar una cita sin compromiso.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+            ● ¿Solo operan en una ciudad o cubren varias zonas?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Trabajamos en varias ciudades y regiones. Consulta nuestras propiedades filtrando por ubicación para más detalles.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

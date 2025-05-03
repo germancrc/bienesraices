@@ -1,0 +1,540 @@
+/* Variables de color actualizadas */
+:root {
+    --primary-color: #2D4263;    /* Azul corporativo */
+    --secondary-color: #B68D40;  /* Oro corporativo */
+    --light-color: #F8F9FA;      /* Gris claro de fondo */
+    --dark-color: #1A2A3A;       /* Azul más oscuro para hover */
+    --accent-color: #3D5A80;     /* Azul secundario */
+    --text-color: #333333;       /* Texto principal */
+    --text-light: #FFFFFF;       /* Texto claro */
+    --success-color: #4CAF50;    /* Verde para éxito */
+    --warning-color: #FFC107;    /* Amarillo para advertencias */
+    --danger-color: #F44336;     /* Rojo para peligro */
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-color);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-container {
+    height: 55vh;
+    min-height: 400px;
+    width: 100%;
+    background: linear-gradient(rgba(45, 66, 99, 0.9), rgba(45, 66, 99, 0.9)), 
+                url('/images/banner-01.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--light-color);
+    margin-bottom: 5.8rem;
+    line-height: 1.3;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--light-color);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  /* Botones */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    color: var(--light-color);
+    border: 2px solid var(--light-color);
+  }
+  
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .btnBuscar{
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .btnBuscar:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Secciones */
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Propiedades Destacadas */
+  .featured-properties {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+  }
+  
+  .properties-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .property-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .property-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .property-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+  }
+  
+  .property-details {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .property-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .property-price {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .property-actions {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn-details {
+    width: 100%;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem;
+  }
+  
+  .btn-details:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* Badges */
+  .property-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    z-index: 1;
+  }
+  
+  .badge-offer {
+    background-color: var(--secondary-color);
+  }
+  
+  .badge-new {
+    background-color: var(--success-color);
+  }
+  
+  .badge-popular {
+    background-color: var(--danger-color);
+  }
+  
+  .property-type {
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .badge-sale {
+    background-color: var(--primary-color);
+  }
+  
+  .badge-rent {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Características */
+  .features-section {
+    padding: 5rem 0;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+  }
+
+  .navbar {
+    background-color: var(--primary-color) !important;
+    color: var(--light-color);
+  }
+
+
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .feature-item {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .feature-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--light-color);
+  }
+  
+  .feature-item p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
+  
+  /* Testimonios */
+  .testimonials-section {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    background-color: var(--light-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    border-left: 4px solid var(--primary-color);
+  }
+  
+  .testimonial-body {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid var(--primary-color);
+  }
+  
+  .testimonial-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+  }
+  
+  .testimonial-role {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+  
+  .testimonial-text {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .testimonial-quote {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+  }
+  
+  .testimonial-rating {
+    color: var(--primary-color);
+    font-size: 1rem;
+  }
+  
+  /* FAQ */
+  .faq-section {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+    color: var(--text-color);
+  }
+  
+  .faq-item {
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-button {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+
+  .accordion-button {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+  
+  
+  .faq-button:hover {
+    background-color: var(--light-color);
+  }
+  
+  .faq-body {
+    padding: 1.25rem 1.5rem;
+    background-color: var(--light-color);
+    color: var(--text-color);
+  }
+  
+  
+/* Responsive */
+@media (min-width: 768px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.5rem;
+    }
+  
+    .hero-buttons {
+      flex-direction: row;
+    }
+  
+    .properties-grid,
+    .features-grid,
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    /* Para pantallas grandes, organizamos en 2 columnas */
+    .hero-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    /* Título y subtítulo a la izquierda */
+    .hero-title, .hero-subtitle {
+      text-align: left;
+    }
+  
+    /* Formulario a la derecha */
+    .card {
+      flex: 0 0 48%; /* Ocupa el 48% del contenedor */
+    }
+  
+    .col-md-6 {
+      margin-bottom: 0; /* Eliminar márgenes en pantallas grandes */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      height: 60vh;
+      min-height: 350px;
+    }
+  
+    .hero-title {
+      font-size: 2rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+  
+    .section-title {
+      font-size: 1.75rem;
+    }
+  
+    .properties-grid,
+    .features-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    /* En móviles, organizar todo en una sola columna */
+    .hero-content {
+      display: block;
+      text-align: center;
+    }
+  
+    /* Aseguramos que el formulario ocupe todo el ancho disponible */
+    .card {
+      width: 100%; /* Para que el formulario ocupe todo el ancho en móviles */
+    }
+  
+    .col-md-6 {
+      margin-bottom: 20px; /* Añadir margen para mejorar la separación */
+    }
+  }
+
+/*   SOLO EL VH */
+/* Pantallas grandes 1200px y más */
+@media (min-width: 1200px) {
+    .hero-container {
+      height: 60vh; /* Aumentamos a 60vh para una mejor visualización en pantallas grandes */
+      min-height: 400px; /* Asegura que no se haga demasiado pequeño */
+    }
+  
+    .hero-content {
+      padding: 0 20px;
+    }
+  }
+  
+  /* Pantallas más pequeñas (por ejemplo, 768px y menores) */
+  @media (max-width: 1199px) {
+    .hero-container {
+      height: 50vh; /* Ajustamos a un valor intermedio para pantallas más pequeñas */
+      min-height: 350px; /* Para evitar que se haga demasiado pequeño */
+    }
+  
+    .hero-content {
+      padding: 0 15px;
+    }
+  }
+  
+  /* Pantallas pequeñas (por ejemplo, 768px y menos) */
+  @media (max-width: 768px) {
+    .hero-container {
+      height: 60vh; /* Mayor altura en pantallas más pequeñas */
+      min-height: 400px; /* Para evitar que se haga demasiado pequeño */
+    }
+  
+    .hero-content {
+      padding: 0 10px;
+    }
+  }
+  
+  
