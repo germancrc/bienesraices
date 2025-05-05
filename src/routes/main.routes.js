@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
     layout: 'main',
     title: 'Inicio - Portal Punta Cana',
     description: 'Explora nuestras propiedades destacadas',
+    active: 'inicio', // Esto activará el link correspondiente
     featuredProperties: featuredProperties.slice(0, 5),
     testimonials: testimonials // Pasa los datos de los testimonios
   });
