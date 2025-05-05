@@ -38,12 +38,10 @@
                   <div class="input-group input-group-sm">
                     <label class="input-group-text bg-light fw-bold border-end-0" for="tipoInmueble">¿Qué buscas?</label>
                     <select class="form-select form-select-sm border-start-0" id="tipoInmueble">
-                      <option value="" selected>Busca por casa, apartamento...</option>
+                      <option value="" selected>Todos...</option>
                       <option value="casa">Casa</option>
                       <option value="departamento">Departamento</option>
-                      <option value="terreno">Terreno</option>
-                      <option value="local">Local Comercial</option>
-                      <option value="oficina">Oficina</option>
+                      <option value="terreno">Villa</option>
                     </select>
                   </div>
                 </div>
@@ -55,16 +53,19 @@
                     <input type="text" 
                           class="form-control form-control-sm border-start-0" 
                           id="ubicacion" 
-                          placeholder="Provincia, Ciudad o Barrio"
+                          placeholder="Punta Cana"
                           aria-label="Ubicación de la propiedad">
                   </div>
                 </div>
 
                 <!-- Botón -->
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary text-uppercase text-light shadow-sm">
+{{!--                   <button type="submit" class="btn btn-primary text-uppercase text-light shadow-sm">
                     <i class="bi bi-search"></i>&nbsp;Buscar
-                  </button>
+                  </button> --}}
+                      <div class="text-center">
+      <a href="/propiedades" class="btn btn-primary btn-more text-light shadow"><i class="bi bi-search"></i>&nbsp;Buscar</a>
+    </div>
                 </div>
               </form>
             </div>
