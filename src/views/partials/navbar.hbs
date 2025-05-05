@@ -1,49 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top shadow">
   <div class="container">
-    <a class="navbar-brand fw-bold text-warning" href="#">
-      <i class="bi bi-houses"></i>&nbsp;Inmobiliaria
+    <a class="navbar-brand" href="/">
+      <img src="/images/logo-nav.webp" class="logo-navbar" alt="LOGO">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-            aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="comprarDropdown" 
-             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-house-door me-1"></i>Comprar
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="comprarDropdown">
-            <li><a class="dropdown-item" href="#">Casas</a></li>
-            <li><a class="dropdown-item" href="#">Departamentos</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="alquilarDropdown" 
-             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-cash-stack me-1"></i>Alquilar
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="alquilarDropdown">
-            <li><a class="dropdown-item" href="#">Residencial</a></li>
-            <li><a class="dropdown-item" href="#">Comercial</a></li>
-            <li><a class="dropdown-item" href="#">Vacacional</a></li>
-          </ul>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-collection me-1"></i>Propiedades
+          <a class="nav-link text-white position-relative {{#if (eq active 'propiedades')}}active{{/if}}"
+            href="/propiedades">
+            Propiedades
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-people me-1"></i>Agentes
+          <a class="nav-link text-white position-relative {{#if (eq active 'agentes')}}active{{/if}}" href="/agentes">
+            Agentes
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-outline-light ms-2 px-3" href="#">
-            <i class="bi bi-telephone-outbound me-1"></i>Contáctanos
+          <a class="nav-link text-white position-relative {{#if (eq active 'contacto')}}active{{/if}}" href="/contacto">
+            Contacto
+          </a>
+        </li>
+
+        <li class="nav-item ms-lg-3">
+          <a class="nav-link text-white position-relative {{#if (eq active 'login')}}active{{/if}}" href="/login">
+            <i class="bi bi-person-circle"></i>&nbsp;Entrar
           </a>
         </li>
       </ul>

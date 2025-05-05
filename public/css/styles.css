@@ -19,7 +19,67 @@
     line-height: 1.6;
     background-color: var(--light-color);
   }
-  
+
+  .logo-navbar {
+    width: auto;
+    height: 50px;
+  }
+
+  .logo-footer {
+    width: auto;
+    height: 90px;
+  }
+
+  .navbar{
+    z-index: 1050 !important;
+    color: var(--text-light);
+  }
+
+    /* Estilo base para el subrayado */
+    .navbar-dark .navbar-nav .nav-link {
+      position: relative;
+      padding-bottom: 2px; /* Espacio para el subrayado */
+    }
+
+    .navbar-dark .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      background-color: #ffc107;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    /* Desktop (70% centrado) */
+    @media (min-width: 992px) {
+      .navbar-dark .navbar-nav .nav-link::after {
+        left: 15%;
+        width: 70%;
+      }
+    }
+
+    /* Móvil (100% de ancho) */
+    @media (max-width: 991.98px) {
+      .navbar-dark .navbar-nav .nav-link::after {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    /* Estados hover y active (comparten estilo) */
+    .navbar-dark .navbar-nav .nav-link:hover::after,
+    .navbar-dark .navbar-nav .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    /* Estilo adicional para enlace activo */
+    .navbar-dark .navbar-nav .nav-link.active {
+      font-weight: 500;
+    }
+
+
   /* Hero Section */
   .hero-section {
     position: relative;
@@ -30,8 +90,8 @@
     height: 55vh;
     min-height: 400px;
     width: 100%;
-    background: linear-gradient(rgba(45, 66, 99, 0.9), rgba(45, 66, 99, 0.9)), 
-                url('/images/banner-01.jpg') center/cover;
+    background: linear-gradient(rgba(45, 66, 99, 0.4), rgba(45, 66, 99, 0.4)),
+    url('/images/banner-01.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +100,7 @@
   .hero-content {
     text-align: center;
     padding: 1rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
   }
   
@@ -124,79 +184,194 @@
   }
   
   /* Propiedades Destacadas */
-  .featured-properties {
-    padding: 5rem 0;
-    background-color: var(--light-color);
+.featured-properties {
+  padding: 5rem 0;
+  background-color: var(--light-color);
+}
+
+/* Grid para desktop */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .properties-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Estilos base de la tarjeta */
+.property-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.property-type,
+.property-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1;
+  text-align: center;
+  gap: 0.4rem; /* espacio entre icono y texto */
+  white-space: nowrap;
+}
+
+.property-type {
+   background-color: var(--secondary-color);
+}
+
+/* Imagen */
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .property-image {
+    height: 250px;
+  }
+}
+
+/* Contenido de la tarjeta */
+.property-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.property-details {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  min-height: 40px;
+}
+
+/* Footer y precio */
+.property-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.property-price {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Botones de acción */
+.property-actions {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.btn-details {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  transition: all 0.3s ease;
+  cursor:  pointer !important;
+}
+
+.btn-details:hover {
+  background-color: var(--dark-color);
+  color: white;
+}
+
+.card-img-overlay {
+  z-index: 1;
+}
+
+.card-footer {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Estilos específicos para el carrusel móvil */
+@media (max-width: 991px) {
+  .carousel-inner {
+    padding: 0 10px;
   }
   
-  .properties-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .carousel-item {
+    padding: 0 5px;
   }
   
   .property-card {
-    background-color: white;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
   }
   
-  .property-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  .carousel-indicators {
+    margin-top: 1rem;
   }
   
-  .property-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
   }
   
-  .property-body {
-    padding: 1.5rem;
-    flex-grow: 1;
+  .carousel-control-prev, 
+  .carousel-control-next {
+    width: 40px;
   }
-  
-  .property-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-  }
-  
-  .property-details {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
-  
-  .property-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-  }
-  
-  .property-price {
-    color: var(--primary-color);
-    font-weight: 600;
-    margin: 0;
-  }
-  
-  .property-actions {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-  }
-  
-  .btn-details {
+}
+
+/* Transiciones suaves para el carrusel */
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Asegura que las tarjetas tengan el mismo height en cada slide */
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: flex;
+}
+
+/* Ajustes para el carrusel multi-item */
+.carousel-inner .row {
+  width: 100%;
+  margin: 0;
+}
+
+/* Espaciado entre tarjetas */
+.carousel-inner .col-lg-4 {
+  padding: 0 5px;
+}
+
+/* Asegura que las tarjetas no se corten */
+.carousel-inner .mx-2 {
+  height: 100%;
+}
+
+
+
+
+  .property-location {
     width: 100%;
     background-color: transparent;
     color: var(--primary-color);
@@ -204,51 +379,7 @@
     padding: 0.5rem;
   }
   
-  .btn-details:hover {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  /* Badges */
-  .property-badge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 0.35rem 0.75rem;
-    border-radius: 0.25rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: white;
-    z-index: 1;
-  }
-  
-  .badge-offer {
-    background-color: var(--secondary-color);
-  }
-  
-  .badge-new {
-    background-color: var(--success-color);
-  }
-  
-  .badge-popular {
-    background-color: var(--danger-color);
-  }
-  
-  .property-type {
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.25rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: white;
-  }
-  
-  .badge-sale {
-    background-color: var(--primary-color);
-  }
-  
-  .badge-rent {
-    background-color: var(--secondary-color);
-  }
+
   
   /* Características */
   .features-section {
@@ -415,9 +546,117 @@
     background-color: var(--light-color);
     color: var(--text-color);
   }
+
+  .btn-bookmark {
+    scale: 1.7;
+
+  }
   
+
+/*   ///////////////////////////////// MAPA //////////////////////////////////////////// */
+
+/* Estilos generales del mapa */
+.map-container {
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: all 0.3s ease;
+}
+
+/* Estilos para móvil */
+@media (max-width: 991.98px) {
+  .map-container {
+    height: 400px;
+    border-radius: 0;
+  }
+}
+
+/* ///////////////////////////////// MAPA //////////////////////////////////////// */
+.map-popup {
+  max-width: 100%;
+  min-width: 280px;
+  width: 320px;
+  padding: 0.75rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.map-popup img {
+  width: 100%;
+  height: 130px; /* ligeramente más compacto */
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.map-popup h6 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.map-popup p {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.map-popup .property-badge {
+  margin-bottom: 0.25rem;
+}
+
+
+.badge-offer { background-color: #ffc107; color: #212529; }
+.badge-new { background-color: #198754; }
+.badge-popular { background-color: #dc3545; }
+.badge-sale { background-color: #0d6efd; }
+.badge-rent { background-color: #6f42c1; }
+.badge-house {
+  background-color: #795548; /* Marrón tierra */
+  color: #fff;
+}
+.badge-apartment {
+  background-color: #17a2b8; /* Azul teal */
+  color: #fff;
+}
+.badge-villa {
+  background-color: #d63384; /* Rosa elegante */
+  color: #fff;
+}
+
+
+
+
+/* Ajustes para Leaflet */
+.leaflet-popup-content {
+  margin: 0.75rem;
+  width: auto !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  padding: 0;
+}
+
+.leaflet-popup-tip {
+  box-shadow: none;
+}
+
+.leaflet-control-attribution {
+  font-size: 0.7rem;
+}
+
+/* Efecto hover para marcadores */
+.leaflet-marker-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
   
-/* Responsive */
+/*   
+////////////////////////////////////////////// Responsive ///////////////////////////////////// */
 @media (min-width: 768px) {
     .hero-title {
       font-size: 3rem;
@@ -444,15 +683,11 @@
       justify-content: space-between;
       align-items: center;
     }
-  
-    /* Título y subtítulo a la izquierda */
-    .hero-title, .hero-subtitle {
-      text-align: left;
-    }
-  
+
     /* Formulario a la derecha */
     .card {
       flex: 0 0 48%; /* Ocupa el 48% del contenedor */
+      
     }
   
     .col-md-6 {
@@ -500,41 +735,102 @@
     }
   }
 
-/*   SOLO EL VH */
-/* Pantallas grandes 1200px y más */
-@media (min-width: 1200px) {
-    .hero-container {
-      height: 60vh; /* Aumentamos a 60vh para una mejor visualización en pantallas grandes */
-      min-height: 400px; /* Asegura que no se haga demasiado pequeño */
-    }
-  
-    .hero-content {
-      padding: 0 20px;
-    }
+/* Hero Section Height Adjustments - Responsive */
+
+/* Extra Large Screens (1440px and up) */
+@media (min-width: 1440px) {
+  .hero-container {
+    height: 45vh;
+    min-height: 500px; /* Increased min-height for very large screens */
   }
   
-  /* Pantallas más pequeñas (por ejemplo, 768px y menores) */
-  @media (max-width: 1199px) {
-    .hero-container {
-      height: 50vh; /* Ajustamos a un valor intermedio para pantallas más pequeñas */
-      min-height: 350px; /* Para evitar que se haga demasiado pequeño */
-    }
-  
-    .hero-content {
-      padding: 0 15px;
-    }
+  .hero-title {
+    font-size: 3.5rem; /* Larger text for big screens */
   }
   
-  /* Pantallas pequeñas (por ejemplo, 768px y menos) */
-  @media (max-width: 768px) {
-    .hero-container {
-      height: 60vh; /* Mayor altura en pantallas más pequeñas */
-      min-height: 400px; /* Para evitar que se haga demasiado pequeño */
-    }
-  
-    .hero-content {
-      padding: 0 10px;
-    }
+  .hero-subtitle {
+    font-size: 1.75rem;
+  }
+}
+
+/* Large Screens (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .hero-container {
+    height: 65vh;
+    min-height: 450px;
   }
   
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium Screens (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hero-container {
+    height: 55vh;
+    min-height: 400px;
+  }
+}
+
+/* Small Screens (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-container {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Extra Small Screens (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .hero-container {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Devices (up to 575px) */
+@media (max-width: 575px) {
+  .hero-container {
+    height: 70vh;
+    min-height: 450px;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-content {
+    padding: 0 10px;
+  }
+  
+}
+
+/* Common padding for all screens except mobile */
+@media (min-width: 576px) {
+  .hero-content {
+    padding: 0 20px;
+  }
+}
   

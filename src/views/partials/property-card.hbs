@@ -1,0 +1,65 @@
+<div class="property-card">
+  <div class="card">
+    <img src="{{images.[0]}}" class="property-image card-img" alt="{{alt}}">
+
+    <div class="card-img-overlay d-flex flex-column justify-content-between">
+      <!-- Badges: tipo y estado -->
+      <div class="row">
+        <div class="col-6">
+          <span class="property-type shadow-sm badge badge-{{type.class}}">
+            <i class="bi {{type.icon}} me-1"></i> {{type.text}}
+          </span>
+        </div>
+        <div class="col-6 text-end">
+          <span class="property-badge shadow-sm badge badge-{{badge.type}}">
+            <i class="bi {{badge.icon}} me-1"></i> {{badge.text}}
+          </span>
+        </div>
+      </div>
+    </div>
+
+<div class="card-footer py-3">
+  <!-- Detalles -->
+  <div class="mb-2">
+    <p class="mb-0 small text-muted">
+      {{#each details}}
+        <i class="bi {{icon}} me-1"></i> {{text}}{{#unless @last}} | {{/unless}}
+      {{/each}}
+    </p>
+  </div>
+
+  <!-- Título -->
+  <h6 class="fw-bold mb-2">
+    <a href="{{detailUrl}}" class="text-dark text-decoration-none">
+      {{title.text}}
+    </a>
+  </h6>
+
+  <!-- Ubicación -->
+  <p class="text-muted mb-2">
+    <i class="bi {{location.icon}} me-1"></i> {{location.text}}
+  </p>
+
+  <!-- Estado y Precio -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <span class="property-badge shadow-sm badge badge-{{option.class}}">
+      <i class="bi {{option.icon}} me-1"></i> {{option.text}}
+    </span>
+    <h5 class="property-price text-{{option.class}} fw-bold mb-0">
+      {{price}}
+    </h5>
+  </div>
+
+  <!-- Botones -->
+     <div class="d-flex align-items-center gap-5">
+    <a href="/propiedad/{{id}}" class="btn btn-details flex-grow-1 me-4">
+      Ver detalles
+    </a>
+    <button type="button" class="btn btn-sm border-0 text-muted btn-bookmark" title="Guardar">
+      <i class="bi bi-heart fs-5"></i>
+    </button>
+  </div>
+</div>
+
+  </div>
+</div>
