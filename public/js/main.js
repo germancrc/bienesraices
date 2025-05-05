@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <small class="text-muted">
                 <i class="bi bi-geo-alt me-1"></i> ${prop.location.text || ""}
               </small>
-              <a href="${prop.link}" class="btn btn-sm btn-outline-primary rounded-pill px-3">Ver</a>
+              <a href="/propiedad/${prop.id}" class="btn btn-sm btn-outline-primary rounded-pill px-3">Ver</a>
             </div>
           </div>
 
