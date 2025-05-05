@@ -138,7 +138,7 @@ module.exports = [
     video: "/videos/propiedad2.mp4",
     floorPlan: "/images/plano-propiedad2.jpg",
     link: '#',
-    coordinates: [18.607206176969274, -68.39486210640666],
+    coordinates: [18.607347742621776, -68.39583798162691],
     featured: true
   },
   {
@@ -209,7 +209,7 @@ module.exports = [
     video: "/videos/propiedad3.mp4",
     floorPlan: "/images/plano-propiedad3.jpg",
     link: '#',
-    coordinates: [18.607206176969274, -68.39486210640666],
+    coordinates: [18.60704217283855, -68.39427517649963],
     featured: true
   },
   {

@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Popup mejorado
         const popupContent = `
           <div class="map-popup">
-            <img src="${prop.image}" alt="${prop.alt}" class="img-fluid rounded mb-2">
+            <img src="${prop.images[0]}" alt="${prop.alt}" class="img-fluid rounded mb-2">
 
             ${
               prop.badge
