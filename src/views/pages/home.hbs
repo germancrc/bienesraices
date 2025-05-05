@@ -80,13 +80,20 @@
 <section id="propiedades" class="featured-properties">
   <div class="container">
     <h3 class="section-title">Propiedades Destacadas</h3>
-    <div class="properties-grid">
-      {{#each featuredProperties}}
-        {{>property-card}}
-      {{/each}}
+    <div class="swiper properties-carousel">
+      <div class="swiper-wrapper">
+        {{#each featuredProperties}}
+          <div class="swiper-slide">{{>property-card}}</div>
+        {{/each}}
+      </div>
+      <!-- Add pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
     <div class="text-center mt-5">
-      <a href="/propiedades" class="btn btn-primary text-light shadow">Ver todas las propiedades</a>
+      <a href="/propiedades" class="btn btn-primary btn-more text-light shadow">Ver todas las propiedades</a>
     </div>
   </div>
 </section>
@@ -130,92 +137,39 @@
   </section>
 
   <!-- Testimonios -->
-  <section class="testimonials-section">
-    <div class="container">
-      <h2 class="section-title">
-        <i class="bi bi-chat-quote-fill me-2"></i> Opiniones de Clientes
-      </h2>
-      <div class="testimonials-grid">
-        <!-- Testimonio 1 -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">
+      <i class="bi bi-chat-quote-fill me-2"></i> Opiniones de Clientes
+    </h2>
+    <div class="testimonials-grid">
+      {{#each testimonials}}
         <div class="testimonial-card">
           <div class="testimonial-body">
             <div class="testimonial-header">
-              <img src="/images/client-01.jpg" class="testimonial-avatar" alt="Ana Martínez">
+              <img src="{{avatar}}" class="testimonial-avatar" alt="{{name}}">
               <div>
-                <h5 class="testimonial-name">Ana Martínez</h5>
+                <h5 class="testimonial-name">{{name}}</h5>
                 <small class="testimonial-role">
-                  <i class="bi bi-house-check me-1"></i> Compradora
+                  <i class="bi {{roleIcon}} me-1"></i> {{role}}
                 </small>
               </div>
             </div>
             <p class="testimonial-text">
-              <i class="bi bi-quote testimonial-quote"></i> Excelente servicio y asesoramiento profesional en todo
-              momento.
+              <i class="bi bi-quote testimonial-quote"></i> {{text}}
             </p>
             <div class="testimonial-rating">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
+              {{#each (stars rating)}}
+                <i class="bi {{this}}"></i>
+              {{/each}}
             </div>
           </div>
         </div>
-
-        <!-- Testimonio 2 -->
-        <div class="testimonial-card">
-          <div class="testimonial-body">
-            <div class="testimonial-header">
-              <img src="/images/client-02.jpg" class="testimonial-avatar" alt="Carlos Rodríguez">
-              <div>
-                <h5 class="testimonial-name">Carlos Rodríguez</h5>
-                <small class="testimonial-role">
-                  <i class="bi bi-building-lock me-1"></i> Arrendatario
-                </small>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              <i class="bi bi-quote testimonial-quote"></i> Encontré el departamento perfecto en menos de una semana.
-              ¡Muy recomendables!
-            </p>
-            <div class="testimonial-rating">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-half"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonio 3 -->
-        <div class="testimonial-card">
-          <div class="testimonial-body">
-            <div class="testimonial-header">
-              <img src="/images/client-03.jpg" class="testimonial-avatar" alt="María González">
-              <div>
-                <h5 class="testimonial-name">María González</h5>
-                <small class="testimonial-role">
-                  <i class="bi bi-house-up me-1"></i> Vendedora
-                </small>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              <i class="bi bi-quote testimonial-quote"></i> Vendí mi propiedad al mejor precio del mercado gracias a su
-              estrategia de ventas.
-            </p>
-            <div class="testimonial-rating">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/each}}
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- FAQ -->
   <section class="faq-section py-5">

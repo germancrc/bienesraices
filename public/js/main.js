@@ -233,19 +233,46 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// BOTON FAVORITOS
-document.querySelectorAll('.btn-bookmark').forEach(btn => {
-  btn.addEventListener('mouseenter', () => {
-    const icon = btn.querySelector('i');
-    icon.classList.remove('bi-heart');
-    icon.classList.add('bi-heart-fill', 'text-danger'); // ← color rojo
-  });
 
-  btn.addEventListener('mouseleave', () => {
-    const icon = btn.querySelector('i');
-    icon.classList.remove('bi-heart-fill', 'text-danger');
-    icon.classList.add('bi-heart');
-  });
+//////////////SWIPER
+
+const swiper = new Swiper('.properties-carousel', {
+  // Optional parameters
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 30,
+  centeredSlides: true,
+  
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    // when window width is >= 1024px
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 40
+    }
+  }
 });
 
 

@@ -21,11 +21,12 @@
 <div class="card-footer py-3">
   <!-- Detalles -->
   <div class="mb-2">
-    <p class="mb-0 small text-muted">
-      {{#each details}}
-        <i class="bi {{icon}} me-1"></i> {{text}}{{#unless @last}} | {{/unless}}
-      {{/each}}
-    </p>
+<p class="mb-0 small text-muted">
+  {{#each (limit details 3)}}
+    <i class="bi {{icon}} me-1"></i> {{text}}{{#unless @last}} | {{/unless}}
+  {{/each}}
+</p>
+
   </div>
 
   <!-- Título -->
@@ -52,11 +53,11 @@
 
   <!-- Botones -->
      <div class="d-flex align-items-center gap-5">
-    <a href="/propiedad/{{id}}" class="btn btn-details flex-grow-1 me-4">
+    <a href="/propiedad/{{id}}" class="btn btn-primary flex-grow-1 me-4">
       Ver detalles
     </a>
     <button type="button" class="btn btn-sm border-0 text-muted btn-bookmark" title="Guardar">
-      <i class="bi bi-heart fs-5"></i>
+      <i class="bi bi-bookmark fs-5"></i>
     </button>
   </div>
 </div>

@@ -25,6 +25,7 @@ const hbs = exphbs.create({
     gt: function (a, b) {
       return a > b;
     },
+    // Helper para a % b === 0
     mod: function (a, b) {
       return a % b === 0;
     },
@@ -32,18 +33,30 @@ const hbs = exphbs.create({
     split: function (str, separator) {
       return str.split(separator);
     },
-    // Nuevo helper para chunk (agrupar array en subarrays)
-    chunk: function(arr, size, options) {
+    // ✅ Nuevo helper para limitar la cantidad de elementos
+    limit: function (arr, limit) {
       if (!Array.isArray(arr)) return [];
-      const chunks = [];
-      for (let i = 0; i < arr.length; i += size) {
-        chunks.push(arr.slice(i, i + size));
-      }
-      return chunks;
+      return arr.slice(0, limit);
+    },
+    stars: function (rating) {
+      const stars = [];
+      const fullStars = Math.floor(rating);
+      const halfStar = rating % 1 >= 0.5;
+  
+      // Llenar las estrellas completas
+      for (let i = 0; i < fullStars; i++) stars.push("bi-star-fill");
+      
+      // Agregar la estrella media si corresponde
+      if (halfStar) stars.push("bi-star-half");
+      
+      // Rellenar las estrellas vacías restantes
+      while (stars.length < 5) stars.push("bi-star");
+  
+      return stars;
     }
-
   }
 });
+
 
 // Registrar el motor de plantillas
 app.engine('hbs', hbs.engine);

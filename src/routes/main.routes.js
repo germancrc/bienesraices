@@ -6,12 +6,14 @@ module.exports = (properties) => {
 router.get('/', (req, res) => {
   // Filtrar propiedades destacadas
   const featuredProperties = properties.filter(property => property.featured);
+  const testimonials = require('../data/testimonials');
 
   res.render('home', {
     layout: 'main',
     title: 'Inicio - Portal Punta Cana',
     description: 'Explora nuestras propiedades destacadas',
-    featuredProperties: featuredProperties.slice(0, 5)
+    featuredProperties: featuredProperties.slice(0, 5),
+    testimonials: testimonials // Pasa los datos de los testimonios
   });
 });
 

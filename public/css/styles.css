@@ -139,15 +139,18 @@
   
   .btn-primary {
     background-color: var(--secondary-color);
-    color: var(--text-color);
+    color: white;
     border: none;
   }
   
   .btn-primary:hover {
     background-color: var(--dark-color);
     color: var(--light-color);
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-more:hover{
+    transform: translateY(-2px);
   }
   
   .btn-outline {
@@ -195,6 +198,37 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
+
+/* Asegúrate de que el contenedor tenga espacio abajo */
+.properties-carousel {
+  padding-bottom: 40px; /* Espacio para la paginación */
+  position: relative;
+}
+
+/* Posiciona la paginación abajo del carrusel */
+.swiper-pagination {
+  bottom: 10px; /* Ajusta según necesites */
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white; /* Terracota */
+  background-color: var(--primary-color);
+  padding: 25px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  top: 45%; /* ⬆️ Sube las flechas en el carrusel */
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+
+
 
 @media (min-width: 992px) {
   .properties-grid {
@@ -284,14 +318,6 @@
 /* Botones de acción */
 .property-actions {
   padding: 0 1.5rem 1.5rem;
-}
-
-.btn-details {
-  width: 100%;
-  background-color: var(--primary-color);
-  color: white;
-  transition: all 0.3s ease;
-  cursor:  pointer !important;
 }
 
 .btn-details:hover {
@@ -733,6 +759,12 @@
     .col-md-6 {
       margin-bottom: 20px; /* Añadir margen para mejorar la separación */
     }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+
   }
 
 /* Hero Section Height Adjustments - Responsive */
