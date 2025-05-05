@@ -1,47 +1,51 @@
+<div class="navbar shadow-sm d-lg-none sticky-top bg-white px-3 py-2">
+  <div class="d-flex justify-content-center gap-3">
+    <button class="btn btn-secondary px-4" type="button" data-bs-toggle="collapse" data-bs-target="#filtersCollapse"
+      aria-expanded="false" aria-controls="filtersCollapse">
+      <i class="bi bi-funnel me-2"></i>Filtrar
+    </button>
+
+    <button id="showMapMobile" class="btn btn-secondary px-4" type="button">
+      <i class="bi bi-map me-2"></i>Mapa
+    </button>
+  </div>
+</div>
+
+
+  
 <div class="container-fluid p-3 px-md-5">
 
   <!-- Filtros (Solo botón en móvil) -->
   <section class="mb-4">
-    <div class="d-lg-none mb-3">
-      <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#filtersCollapse"
-        aria-expanded="false" aria-controls="filtersCollapse">
-        <i class="bi bi-funnel me-2"></i>Filtrar propiedades
-      </button>
-    </div>
+
 
     <div class="collapse d-lg-block" id="filtersCollapse">
-      <h2 class="mb-3 d-none d-lg-block">Filtrar propiedades</h2>
       <div class="card shadow-sm mb-4">
         <div class="card-header bg-white border-bottom-0 pb-0">
           <h5 class="card-title mb-0"><i class="bi bi-funnel-fill me-2 text-primary"></i>Filtrar propiedades</h5>
         </div>
+      <hr>
         <div class="card-body pt-0">
           <form class="row g-3">
             <div class="col-md-3 col-6">
-              <label for="tipo" class="form-label">Tipo</label>
+              <label for="tipo" class="form-label fw-bold">Tipo</label>
               <select id="tipo" class="form-select">
                 <option selected>Todos</option>
                 <option>Casa</option>
                 <option>Apartamento</option>
-                <option>Departamento</option>
-                <option>Terreno</option>
-                <option>Local Comercial</option>
-                <option>Oficina</option>
-                <option>Bodega</option>
-                <option>Casa en condominio</option>
+                <option>Villa</option>
               </select>
             </div>
             <div class="col-md-3 col-6">
-              <label for="operacion" class="form-label">Operación</label>
+              <label for="operacion" class="form-label fw-bold">Operación</label>
               <select id="operacion" class="form-select">
                 <option selected>Todas</option>
                 <option>Venta</option>
                 <option>Renta</option>
-                <option>Traspaso</option>
               </select>
             </div>
             <div class="col-md-3 col-6">
-              <label for="precio" class="form-label">Rango de precio</label>
+              <label for="precio" class="form-label fw-bold">Rango de precio</label>
               <select id="precio" class="form-select">
                 <option selected>Cualquier precio</option>
                 <option>Hasta $100,000</option>
@@ -52,26 +56,26 @@
               </select>
             </div>
             <div class="col-md-3 col-6">
-              <label for="habitaciones" class="form-label">Habitaciones</label>
+              <label for="habitaciones" class="form-label fw-bold">Habitaciones</label>
               <select id="habitaciones" class="form-select">
                 <option selected>Cualquier cantidad</option>
-                <option>1+</option>
-                <option>2+</option>
-                <option>3+</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
                 <option>4+</option>
               </select>
             </div>
             <div class="col-md-3 col-6">
-              <label for="banos" class="form-label">Baños</label>
+              <label for="banos" class="form-label fw-bold">Baños</label>
               <select id="banos" class="form-select">
                 <option selected>Cualquier cantidad</option>
-                <option>1+</option>
-                <option>2+</option>
+                <option>1</option>
+                <option>2</option>
                 <option>3+</option>
               </select>
             </div>
             <div class="col-md-3 col-6">
-              <label for="antiguedad" class="form-label">Antigüedad</label>
+              <label for="antiguedad" class="form-label fw-bold">Antigüedad</label>
               <select id="antiguedad" class="form-select">
                 <option selected>Cualquier antigüedad</option>
                 <option>Nueva</option>
@@ -82,26 +86,23 @@
               </select>
             </div>
             <div class="col-md-3 col-6">
-              <label for="estacionamiento" class="form-label">Estacionamiento</label>
+              <label for="estacionamiento" class="form-label fw-bold">Estacionamiento</label>
               <select id="estacionamiento" class="form-select">
                 <option selected>Cualquier cantidad</option>
-                <option>1+</option>
-                <option>2+</option>
+                <option>1</option>
+                <option>2</option>
                 <option>3+</option>
               </select>
             </div>
             <div class="col-md-3 col-6 d-flex align-items-end">
-              <button type="submit" class="btn btn-primary w-100">
-                <i class="bi bi-funnel me-2"></i>Filtrar
+              <button type="submit" class="btn btn-primary w-50">
+                Filtrar
               </button>
-              <button type="reset" class="btn btn-outline-secondary w-100 ms-2">
-                <i class="bi bi-arrow-counterclockwise me-2"></i>Limpiar
+              <button type="reset" class="btn btn-outline-secondary w-50 ms-2">
+                Limpiar
               </button>
             </div>
           </form>
-        </div>
-        <div class="card-footer bg-white border-top-0 pt-0 text-end">
-          <small class="text-muted">Se encontraron {{properties.length}} propiedades</small>
         </div>
       </div>
     </div>
@@ -112,13 +113,7 @@
   <!-- Listado de propiedades -->
   <div class="col-lg-8 mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h3 class="mb-0">Propiedades disponibles</h3>
-      <div>
-        <span class="badge bg-primary rounded-pill">{{properties.length}} resultados</span>
-        <button id="changeViewBtn" class="btn btn-sm btn-outline-secondary ms-2 d-lg-none">
-          <i class="bi bi-grid"></i>
-        </button>
-      </div>
+      <h3 class="mb-0">Resultados:&nbsp;<strong>{{properties.length}}</strong></h3>
     </div>
 
     {{#if properties.length}}
@@ -160,16 +155,10 @@
 
   <!-- Mapa (visible solo en desktop) -->
   <div class="col-lg-4 d-none d-lg-block">
-    <div class="sticky-top pt-3" style="top: 20px;">
+    <div>
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h3 class="mb-0">Ubicación</h3>
         <div>
-          <button id="refreshMap" class="btn btn-sm btn-outline-secondary">
-            <i class="bi bi-arrow-clockwise"></i> Actualizar
-          </button>
-          <button id="mapFullscreen" class="btn btn-sm btn-outline-secondary ms-2">
-            <i class="bi bi-arrows-fullscreen"></i>
-          </button>
         </div>
       </div>
       <div id="map" class="map-container rounded-3 shadow-sm" data-properties="{{json properties}}"
@@ -194,12 +183,7 @@
     </div>
   </div>
 </section>
-  <!-- Botón flotante para mapa en móvil -->
-  <div class="d-lg-none fixed-bottom text-end pe-3 pb-3">
-    <button id="showMapMobile" class="btn btn-primary rounded-circle shadow-lg" style="width: 56px; height: 56px;">
-      <i class="bi bi-map" style="font-size: 1.2rem;"></i>
-    </button>
-  </div>
+
 
   <!-- Modal para mapa en móvil -->
   <div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
